@@ -1,0 +1,96 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>240</x><y>700</y><w>270</w><h>150</h></coordinates><panel_attributes>date_finder
+Package::TRABAJO-PRACTICO-LOS-ELONBOTS
+--
+{Clase que modela un buscador 
+de tweets por rango de fecha }
+--
+#filtrar_tweets_por_fecha(self, archivo_shelve, 
+archivo_csv, fecha_ini, fecha_end, 
+cant_tweets_solicitados, usuario = None ): LIST
+
+#parsear_datetime(self, fecha): DATETIME
+--
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>800</x><y>700</y><w>290</w><h>270</h></coordinates><panel_attributes>expresiones
+Package::TRABAJO-PRACTICO-LOS-ELONBOTS
+--
+{Clase que recibe un texto con 
+la expresion logica que se va a buscar}
+--
+#__resolver_expresion(self, expresion): Dict
+
+#armar_conj_expresiones(self,expresion):
+
+#concatenar(self,lista1, lista2, operador):
+
+#obtener_subxpresion(self,lista_expresion):
+
+#agregar_espacios_en_parentesis(self,expresion):
+--
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>520</x><y>700</y><w>270</w><h>270</h></coordinates><panel_attributes>helper_funcs
+Package::TRABAJO-PRACTICO-LOS-ELONBOTS
+--
+{Clase que contiene funciones helpers 
+(de ayuda) que estaban sueltas por ahi
+y es mejor tenerlas juntas y separadas 
+para poder accederlas desde todo el codigo}
+--
+# recuperar_json(self, json_filename):
+
+#recuperar_shelve(self, shelve_filename):
+
+#obtener_tamanio_de_archivo(self, archivo):
+
+#generar_fechahora_actual(self):
+
+--
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>870</y><w>340</w><h>190</h></coordinates><panel_attributes>ranking
+Package::TRABAJO-PRACTICO-LOS-ELONBOTS
+--
+{Arma diccionario que como clave tiene 
+la palabra y como valor la cantidad 
+de veces que esa palabra aparece }
+--
+# armar_diccionario_palabras_contadas(self, texto):Dict()
+
+--
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>0</y><w>280</w><h>260</h></coordinates><panel_attributes>menu
+Package::TRABAJO-PRACTICO-LOS-ELONBOTS
+--
+{Clase que genera un menu por terminal para
+realizar operaciones con nuestra API}
+--
+#consultar_por_fechas_horas__(self):DICT
+
+#mostrar_tweet(self, tweet):DICT
+
+#consultar_palabras_o_frases__(self):DICT
+
+#ranking__(self):DICT
+
+#recopilar_tweets_desde_twitter(self):DICT
+
+#menu_diccionario__(self): Ejecuta Menu
+--
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>200</x><y>280</y><w>410</w><h>330</h></coordinates><panel_attributes>word_finder_BSBI
+Package::TRABAJO-PRACTICO-LOS-ELONBOTS
+--
+{genera y busca palabras o frases}
+--
+#lematizar(self, palabra): STR
+
+#indexar(self): None
+
+#invertir_bloque(self, bloque):
+
+#guardar_bloque_intermedio(self, bloque, nro_bloque):
+
+#intercalar_bloques(self, temp_files):
+
+#guardar_diccionario_terminos(self):
+
+guardar_diccionario_documentos(self):
+
+parse_next_block(self):
+
+buscar(self, lista_expresiones, cant_tweets = None):
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>250</y><w>270</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>250;30;250;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>250</y><w>30</w><h>640</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;620;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>640</y><w>860</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>840;60;840;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>640</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>370</x><y>640</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element></diagram>
